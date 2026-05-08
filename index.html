@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TrueLine Property Services.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      line-height: 1.6;
+      background-color: #f0f2f5;
+    }
+
+    header {
+      background: url('fence-hero.jpg') center/cover no-repeat;
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+
+    header * {
+      position: relative;
+    }
+
+    .cta-buttons {
+      margin-top: 20px;
+    }
+
+    .cta-buttons button {
+      margin: 10px;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 6px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-buttons button:hover {
+      background: #1e8449;
+    }
+
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 10px;
+    }
+
+    .services, .contact {
+      background: #f9f9f9;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      flex: 1;
+      min-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      border-radius: 8px;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>TrueLine Property Services</h1>
+  <p>Quality Fences Built to Last</p>
+
+  <div class="cta-buttons">
+    <button onclick="location.href='tel:13235551234'">📞 Call Now</button>
+    <button onclick="location.href='sms:13235551234'">💬 Text Us</button>
+    <button onclick="location.href='https://calendar.google.com/calendar/u/0?cid=NmE1OWRmNzgyOGI5NTk2Yjk2NTBmZDRiODIwMjA1NGY2NjIyZTY1MjZkM2E2OTc5ZjI5Zjc5MDBmZjYyOGI2M0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t'">📅 Book Estimate</button>
+  </div>
+</header>
+
+<section>
+  <h2>About Us</h2>
+  <p>At TrueLine Property Services, we provide reliable, high-quality fencing services for homes and businesses in Los Angeles and surrounding areas. From new installations to repairs, our team focuses on durable materials, solid workmanship, and getting the job done right the first time. We take pride in honest service, fair pricing, and delivering results you can count on.</p>
+</section>
+
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">Wood Fencing</div>
+    <div class="card">Vinyl Fencing</div>
+    <div class="card">Chain Link Fencing</div>
+    <div class="card">Fence Repair</div>
+    <div class="card">Fence Removal</div>
+    <div class="card">Stain and Sealant</div>
+  </div>
+</section>
+
+<section>
+  <h2>Why Choose Us</h2>
+  <ul>
+    <li>✔ Free Estimates</li>
+    <li>✔ Licensed & Insured</li>
+    <li>✔ Fast & Reliable Service</li>
+    <li>✔ Quality Work Guaranteed</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Our Work</h2>
+  <div class="gallery">
+    <img src="fence1.jpg" width="300">
+    <img src="fence2.jpg" width="300">
+    <img src="fence3.jpg" width="300">
+  </div>
+</section>
+  
+<section>
+  <h2>Customer Testimonials</h2>
+
+  <div class="cards">
+    <div class="card">
+      <p>"Great work! The fence looks amazing and was finished on time. Highly recommend."</p>
+      <strong>- John D.</strong>
+    </div>
+
+    <div class="card">
+      <p>"Very professional and easy to work with. Fair pricing and quality results."</p>
+      <strong>- Maria S.</strong>
+    </div>
+
+    <div class="card">
+      <p>"They repaired our fence quickly and did an excellent job. Will hire again."</p>
+      <strong>- David R.</strong>
+    </div>
+  </div>
+</section>
+  
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Phone: <a href="tel:13235551234">(801) 734-0300</a></p>
+  <p>Email: your@email.com</p>
+</section>
+
+<footer>
+  <p>© 2026 TrueLine Property Services</p>
+</footer>
+
+<!-- Sticky Call Bar -->
+<div style="position:fixed; bottom:0; width:100%; background:#27ae60; text-align:center; padding:15px;">
+  <a href="tel:13235551234" style="color:white; font-size:18px; text-decoration:none;">
+    Call Now: (801)-734-0300
+  </a>
+</div>
+
+</body>
+</html>
