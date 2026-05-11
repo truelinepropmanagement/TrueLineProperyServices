@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TrueLine Property Services.</title>
+  <title>TrueLine Property Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       margin: 0;
       line-height: 1.6;
-      background-color: #f0f2f5;
+      background-color: #1f1f1f;
+      color: #222;
     }
 
     header {
@@ -19,18 +20,22 @@
       padding: 80px 20px;
       text-align: center;
       position: relative;
+      border-bottom: 4px solid #111;
     }
 
     header::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.55);
     }
 
     header * {
       position: relative;
+      z-index: 1;
     }
 
     .cta-buttons {
@@ -46,29 +51,40 @@
       color: white;
       border: none;
       cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
     }
 
     .cta-buttons button:hover {
       background: #1e8449;
+      transform: translateY(-2px);
     }
 
     section {
       padding: 40px;
       max-width: 1000px;
-      margin: 20px auto;
-      background: white;
-      border-radius: 10px;
+      margin: 25px auto;
+      background: #f4f4f4;
+      border-radius: 12px;
+
+      /* Dark Border */
+      border: 3px solid #2b2b2b;
+
+      /* Dark Shadow */
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
     }
 
-    .services, .contact {
-      background: #f9f9f9;
+    .services,
+    .contact {
+      background: #ececec;
     }
 
     footer {
-      background: #333;
+      background: #111;
       color: white;
       text-align: center;
       padding: 20px;
+      border-top: 4px solid #000;
     }
 
     .cards {
@@ -81,27 +97,92 @@
       background: white;
       padding: 20px;
       flex: 1;
-      min-width: 200px;
+      min-width: 220px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+      /* Dark Border */
+      border: 2px solid #333;
+
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       text-align: center;
       font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
     }
 
     .gallery {
       display: flex;
-      gap: 10px;
+      gap: 15px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .gallery img {
-      border-radius: 8px;
+      border-radius: 10px;
       transition: transform 0.3s;
       cursor: pointer;
+      border: 3px solid #333;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .gallery img:hover {
       transform: scale(1.05);
+    }
+
+    a {
+      color: #27ae60;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .sticky-call {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #27ae60;
+      text-align: center;
+      padding: 15px;
+      border-top: 3px solid #145a32;
+      z-index: 999;
+    }
+
+    .sticky-call a {
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 25px;
+      }
+
+      .cta-buttons button {
+        width: 90%;
+        max-width: 300px;
+      }
+
+      .cards {
+        flex-direction: column;
+      }
+
+      .gallery {
+        justify-content: center;
+      }
+
+      .gallery img {
+        width: 100%;
+        max-width: 350px;
+      }
     }
   </style>
 </head>
@@ -114,18 +195,35 @@
 
   <div class="cta-buttons">
     <button onclick="location.href='tel:18017340300'">📞 Call Now</button>
-    <button onclick="location.href='sms:18017340300'">💬 Text Us</button>
-    <button onclick="location.href='https://calendar.app.google/n3HRDXZbS2cY9txa9'">📅 Book Estimate</button>
+
+    <button onclick="location.href='sms:18017340300'">
+      💬 Text Us
+    </button>
+
+    <button onclick="location.href='https://calendar.app.google/n3HRDXZbS2cY9txa9'">
+      📅 Book Estimate
+    </button>
   </div>
 </header>
 
 <section>
   <h2>About Us</h2>
-  <p>At TrueLine Property Services, we provide reliable, high-quality fencing services for homes and businesses in Utah County and surrounding areas. From new installations to repairs, our team focuses on durable materials, solid workmanship, and getting the job done right the first time. We take pride in honest service, fair pricing, and delivering results you can count on.</p>
+
+  <p>
+    At TrueLine Property Services, we provide reliable,
+    high-quality fencing services for homes and businesses
+    in Utah County and surrounding areas.
+    From new installations to repairs, our team focuses
+    on durable materials, solid workmanship, and getting
+    the job done right the first time.
+    We take pride in honest service, fair pricing,
+    and delivering results you can count on.
+  </p>
 </section>
 
 <section class="services">
   <h2>Our Services</h2>
+
   <div class="cards">
     <div class="card">Wood Fencing</div>
     <div class="card">Vinyl Fencing</div>
@@ -138,6 +236,7 @@
 
 <section>
   <h2>Why Choose Us</h2>
+
   <ul>
     <li>✔ Free Estimates</li>
     <li>✔ Licensed & Insured</li>
@@ -148,38 +247,61 @@
 
 <section>
   <h2>Our Work</h2>
+
   <div class="gallery">
     <img src="fence1.jpg" width="300">
     <img src="fence2.jpg" width="300">
     <img src="fence3.jpg" width="300">
   </div>
 </section>
-  
+
 <section>
   <h2>Customer Testimonials</h2>
 
   <div class="cards">
     <div class="card">
-      <p>"Great work! The fence looks amazing and was finished on time. Highly recommend."</p>
+      <p>
+        "Great work! The fence looks amazing and was
+        finished on time. Highly recommend."
+      </p>
+
       <strong>- John D.</strong>
     </div>
 
     <div class="card">
-      <p>"Very professional and easy to work with. Fair pricing and quality results."</p>
+      <p>
+        "Very professional and easy to work with.
+        Fair pricing and quality results."
+      </p>
+
       <strong>- Maria S.</strong>
     </div>
 
     <div class="card">
-      <p>"They repaired our fence quickly and did an excellent job. Will hire again."</p>
+      <p>
+        "They repaired our fence quickly and did an
+        excellent job. Will hire again."
+      </p>
+
       <strong>- David R.</strong>
     </div>
   </div>
 </section>
-  
+
 <section class="contact" id="contact">
   <h2>Contact Us</h2>
-  <p>Phone: <a href="tel:13235551234">(801) 734-0300</a></p>
-  <p>Email: truelinepropmanagement@gmail.com</p>
+
+  <p>
+    Phone:
+    <a href="tel:18017340300">(801) 734-0300</a>
+  </p>
+
+  <p>
+    Email:
+    <a href="mailto:truelinepropmanagement@gmail.com">
+      truelinepropmanagement@gmail.com
+    </a>
+  </p>
 </section>
 
 <footer>
@@ -187,9 +309,9 @@
 </footer>
 
 <!-- Sticky Call Bar -->
-<div style="position:fixed; bottom:0; width:100%; background:#27ae60; text-align:center; padding:15px;">
-  <a href="tel:13235551234" style="color:white; font-size:18px; text-decoration:none;">
-    Call Now: (801)-734-0300
+<div class="sticky-call">
+  <a href="tel:18017340300">
+    📞 Call Now: (801) 734-0300
   </a>
 </div>
 
