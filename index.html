@@ -1,187 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>TrueLine Property Services</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
+      background:
+        linear-gradient(rgba(10,10,10,0.85), rgba(10,10,10,0.92)),
+        url('background.jpg') center/cover fixed;
+      color: white;
       line-height: 1.6;
-      background-color: #1f1f1f;
-      color: #222;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     header {
-      background: url('fence-hero.jpg') center/cover no-repeat;
-      color: white;
-      padding: 80px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 40px 20px;
       position: relative;
-      border-bottom: 4px solid #111;
     }
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.55);
+    .logo-area {
+      margin-bottom: 25px;
     }
 
-    header * {
-      position: relative;
-      z-index: 1;
+    .logo-area img {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      padding: 10px;
+      border: 2px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: #d0d0d0;
+      margin-bottom: 30px;
     }
 
     .cta-buttons {
-      margin-top: 20px;
-    }
-
-    .cta-buttons button {
-      margin: 10px;
-      padding: 14px 28px;
-      font-size: 16px;
-      border-radius: 6px;
-      background: #27ae60;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: 0.3s;
-      font-weight: bold;
-    }
-
-    .cta-buttons button:hover {
-      background: #1e8449;
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 40px;
-      max-width: 1000px;
-      margin: 25px auto;
-      background: #f4f4f4;
-      border-radius: 12px;
-
-      /* Dark Border */
-      border: 3px solid #2b2b2b;
-
-      /* Dark Shadow */
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-    }
-
-    .services,
-    .contact {
-      background: #ececec;
-    }
-
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      border-top: 4px solid #000;
-    }
-
-    .cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      background: white;
-      padding: 20px;
-      flex: 1;
-      min-width: 220px;
-      border-radius: 10px;
-
-      /* Dark Border */
-      border: 2px solid #333;
-
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      text-align: center;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-    }
-
-    .gallery {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
       justify-content: center;
     }
 
-    .gallery img {
-      border-radius: 10px;
-      transition: transform 0.3s;
+    .cta-buttons button {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #27ae60, #1e8449);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
-      border: 3px solid #333;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+      box-shadow: 0 8px 20px rgba(39,174,96,0.3);
+    }
+
+    .cta-buttons button:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(39,174,96,0.5);
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 50px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 25px;
+      color: #27ae60;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 30px 20px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.3s;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      height: 260px;
+      object-fit: cover;
+      transition: 0.3s;
+      border: 2px solid rgba(255,255,255,0.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
     }
 
     .gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
+    }
+
+    .promo-section {
+      background:
+        linear-gradient(135deg, rgba(39,174,96,0.9), rgba(20,90,50,0.9));
+      text-align: center;
+    }
+
+    .promo-section h2 {
+      color: white;
+      font-size: 2.4rem;
+    }
+
+    .promo-section p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .promo-box {
+      margin-top: 30px;
+      background: rgba(255,255,255,0.12);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .promo-box h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      margin-bottom: 12px;
     }
 
     a {
-      color: #27ae60;
+      color: #58d68d;
       text-decoration: none;
       font-weight: bold;
     }
 
-    a:hover {
-      text-decoration: underline;
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      padding: 30px;
+      background: #0e0e0e;
+      border-top: 2px solid rgba(255,255,255,0.08);
     }
 
     .sticky-call {
       position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #27ae60;
-      text-align: center;
-      padding: 15px;
-      border-top: 3px solid #145a32;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #27ae60, #1e8449);
+      padding: 15px 25px;
+      border-radius: 50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
       z-index: 999;
     }
 
     .sticky-call a {
       color: white;
-      font-size: 18px;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
     }
 
     @media (max-width: 768px) {
+
+      header h1 {
+        font-size: 2.7rem;
+      }
+
       section {
-        padding: 25px;
+        padding: 30px 20px;
+        margin: 20px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        width: 100%;
       }
 
       .cta-buttons button {
-        width: 90%;
-        max-width: 300px;
-      }
-
-      .cards {
-        flex-direction: column;
-      }
-
-      .gallery {
-        justify-content: center;
-      }
-
-      .gallery img {
         width: 100%;
-        max-width: 350px;
+      }
+
+      .sticky-call {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        text-align: center;
       }
     }
   </style>
@@ -190,11 +247,23 @@
 <body>
 
 <header>
+
+  <!-- LOGO AREA -->
+  <div class="logo-area">
+    <!-- Replace logo.png with your logo -->
+    <img src="logo.png" alt="TrueLine Logo">
+  </div>
+
   <h1>TrueLine Property Services</h1>
-  <p>Quality Fences Built to Last</p>
+
+  <p>
+    Professional Fencing & Property Solutions Built To Last
+  </p>
 
   <div class="cta-buttons">
-    <button onclick="location.href='tel:18017340300'">📞 Call Now</button>
+    <button onclick="location.href='tel:18017340300'">
+      📞 Call Now
+    </button>
 
     <button onclick="location.href='sms:18017340300'">
       💬 Text Us
@@ -204,24 +273,23 @@
       📅 Book Estimate
     </button>
   </div>
+
 </header>
 
 <section>
   <h2>About Us</h2>
 
   <p>
-    At TrueLine Property Services, we provide reliable,
-    high-quality fencing services for homes and businesses
-    in Utah County and surrounding areas.
-    From new installations to repairs, our team focuses
-    on durable materials, solid workmanship, and getting
-    the job done right the first time.
-    We take pride in honest service, fair pricing,
-    and delivering results you can count on.
+    At TrueLine Property Services, we specialize in high-quality
+    fencing and property improvement solutions throughout Utah.
+    Our team is committed to delivering durable craftsmanship,
+    honest pricing, and dependable service on every project.
+    Whether you need a brand-new fence, repairs, staining,
+    or property upgrades, we’re here to get the job done right.
   </p>
 </section>
 
-<section class="services">
+<section>
   <h2>Our Services</h2>
 
   <div class="cards">
@@ -230,28 +298,58 @@
     <div class="card">Chain Link Fencing</div>
     <div class="card">Fence Repair</div>
     <div class="card">Fence Removal</div>
-    <div class="card">Stain and Sealant</div>
+    <div class="card">Staining & Sealant</div>
   </div>
+</section>
+
+<!-- PROMOTIONAL REFERRAL SECTION -->
+<section class="promo-section">
+
+  <h2>Referral Program</h2>
+
+  <p>
+    Refer a friend, neighbor, or family member to TrueLine
+    Property Services and earn a <strong>$50 Cash Referral Bonus</strong>
+    when their project is completed.
+  </p>
+
+  <div class="promo-box">
+    <h3>💵 Earn $50 Per Referral</h3>
+
+    <p>
+      There’s no limit to how many referrals you can send.
+      Help someone improve their property and get rewarded.
+    </p>
+  </div>
+
 </section>
 
 <section>
   <h2>Why Choose Us</h2>
 
-  <ul>
-    <li>✔ Free Estimates</li>
-    <li>✔ Licensed & Insured</li>
-    <li>✔ Fast & Reliable Service</li>
-    <li>✔ Quality Work Guaranteed</li>
-  </ul>
+  <div class="cards">
+    <div class="card">✔ Free Estimates</div>
+    <div class="card">✔ Licensed & Insured</div>
+    <div class="card">✔ Fast & Reliable</div>
+    <div class="card">✔ Quality Guaranteed</div>
+  </div>
 </section>
 
 <section>
   <h2>Our Work</h2>
 
   <div class="gallery">
-    <img src="fence1.jpg" width="300">
-    <img src="fence2.jpg" width="300">
-    <img src="fence3.jpg" width="300">
+
+    <!-- ORIGINAL IMAGES -->
+    <img src="fence1.jpg" alt="">
+    <img src="fence2.jpg" alt="">
+    <img src="fence3.jpg" alt="">
+
+    <!-- 3 NEW IMAGE INPUTS -->
+    <img src="fence4.jpg" alt="">
+    <img src="fence5.jpg" alt="">
+    <img src="fence6.jpg" alt="">
+
   </div>
 </section>
 
@@ -259,59 +357,61 @@
   <h2>Customer Testimonials</h2>
 
   <div class="cards">
+
     <div class="card">
       <p>
-        "Great work! The fence looks amazing and was
-        finished on time. Highly recommend."
+        "Great work! The fence looks amazing and was finished on time."
       </p>
-
+      <br>
       <strong>- John D.</strong>
     </div>
 
     <div class="card">
       <p>
-        "Very professional and easy to work with.
-        Fair pricing and quality results."
+        "Very professional and easy to work with. Fair pricing and quality results."
       </p>
-
+      <br>
       <strong>- Maria S.</strong>
     </div>
 
     <div class="card">
       <p>
-        "They repaired our fence quickly and did an
-        excellent job. Will hire again."
+        "They repaired our fence quickly and did an excellent job."
       </p>
-
+      <br>
       <strong>- David R.</strong>
     </div>
+
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section id="contact">
   <h2>Contact Us</h2>
 
   <p>
-    Phone:
+    📞 Phone:
     <a href="tel:18017340300">(801) 734-0300</a>
   </p>
 
+  <br>
+
   <p>
-    Email:
+    ✉ Email:
     <a href="mailto:truelinepropmanagement@gmail.com">
       truelinepropmanagement@gmail.com
     </a>
   </p>
+
 </section>
 
 <footer>
-  <p>© 2026 TrueLine Property Services</p>
+  <p>© 2026 TrueLine Property Services • All Rights Reserved</p>
 </footer>
 
-<!-- Sticky Call Bar -->
+<!-- FLOATING CALL BUTTON -->
 <div class="sticky-call">
   <a href="tel:18017340300">
-    📞 Call Now: (801) 734-0300
+    📞 Call (801) 734-0300
   </a>
 </div>
 
